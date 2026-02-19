@@ -12,7 +12,7 @@ import {
 import { SKILLS } from "@/constants";
 
 const SkillsChart: React.FC = () => {
-  const data = SKILLS.slice(0, 6);
+  const data = SKILLS.slice(0, 10);
 
   return (
     <section className="bg-slate-900/50 px-6 py-20">
@@ -38,13 +38,13 @@ const SkillsChart: React.FC = () => {
           </div>
         </div>
 
-        <div className="glass relative min-h-[400px] rounded-2xl p-6">
+        <div className="glass relative min-h-[400px] w-full min-w-0 rounded-2xl p-6">
           <div className="absolute left-6 top-4 z-10">
             <span className="text-xs font-bold uppercase tracking-widest text-slate-500">
               Proficiency Radar
             </span>
           </div>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height={360}>
             <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
               <PolarGrid stroke="#334155" />
               <PolarAngleAxis
