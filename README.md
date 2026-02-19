@@ -38,20 +38,6 @@ In `src/app/api/contact/route.ts`, update the `from:` address once your domain i
 
 Run the app and submit the contact form. You should receive an email at `CONTACT_TO_EMAIL`.
 
-## Push to GitHub
-
-1. Create an empty repo on GitHub.
-2. In this project directory, run:
-
-```bash
-git status
-git add .
-git commit -m "Initial portfolio"
-git remote add origin https://github.com/<your-username>/<repo>.git
-git branch -M main
-git push -u origin main
-```
-
 ## Deployment (Vercel)
 
 1. Go to https://vercel.com/new and import your GitHub repo.
