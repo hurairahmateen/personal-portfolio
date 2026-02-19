@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 import { PROJECTS } from "@/constants";
 import type { Project } from "@/types";
@@ -75,10 +76,12 @@ const Projects: React.FC = () => {
               className="group glass cursor-pointer overflow-hidden rounded-3xl border border-white/5 transition-all duration-700 hover:translate-y-[-10px] hover:shadow-2xl hover:shadow-sky-500/10"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
-                <img
+                <Image
                   src={project.imageUrl}
                   alt={project.title}
-                  className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 flex items-center justify-center gap-6 bg-slate-950/80 opacity-0 backdrop-blur-[2px] transition-all duration-500 group-hover:opacity-100">
                   {project.githubUrl ? (

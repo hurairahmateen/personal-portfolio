@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 import { PERSONAL_INFO } from "@/constants";
 
@@ -42,10 +43,12 @@ const Hero: React.FC = () => {
           <div className="group relative">
             <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-sky-500 to-indigo-600 blur-2xl opacity-20 transition duration-1000 group-hover:opacity-40 group-hover:duration-200"></div>
             <div className="glass floating relative h-72 w-72 overflow-hidden rounded-[2.5rem] border-2 border-white/10 md:h-96 md:w-96">
-              <img
+              <Image
                 src={PERSONAL_INFO.profileImage}
                 alt={PERSONAL_INFO.name}
-                className="h-full w-full object-cover grayscale-[0.2] transition-all duration-700 hover:grayscale-0"
+                fill
+                sizes="(max-width: 768px) 288px, 384px"
+                className="object-cover grayscale-[0.2] transition-all duration-700 hover:grayscale-0"
                 onError={(event) => {
                   const target = event.target as HTMLImageElement;
                   target.src =

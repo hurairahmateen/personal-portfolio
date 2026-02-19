@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
 import type { Project } from "@/types";
@@ -37,11 +38,13 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
                 className="absolute inset-0 bg-slate-950/90 backdrop-blur-md"
                 onClick={() => setLightboxImage(null)}
               />
-              <div className="relative z-[121] max-h-[90vh] w-full max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-slate-900">
-                <img
+              <div className="relative z-[121] flex max-h-[90vh] w-full max-w-[90vw] items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-slate-900">
+                <Image
                   src={lightboxImage}
                   alt="Enlarged project screenshot"
-                  className="h-full w-full object-contain"
+                  width={1400}
+                  height={900}
+                  className="h-auto w-full object-contain"
                 />
               </div>
             </div>
@@ -72,10 +75,12 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
                     title={`${project.title} video`}
                   ></iframe>
                 ) : (
-                  <img
+                  <Image
                     src={project.imageUrl}
                     alt={project.title}
-                    className="h-full w-full object-cover"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    className="object-cover"
                   />
                 )}
               </div>
@@ -116,9 +121,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
                               key={`${src}-${idx}`}
                               className="group relative overflow-hidden rounded-2xl border border-white/5 shadow-lg"
                             >
-                              <img
+                              <Image
                                 src={src}
                                 alt={`${project.title} screenshot ${idx + 1}`}
+                                width={1200}
+                                height={675}
                                 className="h-auto w-full cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.02]"
                                 onClick={() => setLightboxImage(src)}
                               />
