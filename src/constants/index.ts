@@ -45,61 +45,68 @@ export const SKILLS: Skill[] = [
 export const PROJECTS: Project[] = [
   {
     id: "1",
-    title: "Pulse Analytics Pro",
+    title: "iR Studio",
     description:
-      "Enterprise-grade real-time monitoring dashboard with advanced heuristics.",
+      "Owned onboarding UX, Stripe subscriptions, and billing management for a 3D SaaS platform.",
     longDescription:
-      "Developed a comprehensive dashboard using Next.js and D3.js to visualize live user interaction data. Managed complex state with Redux Toolkit and optimized rendering performance for large datasets.",
-    tags: ["Next.js", "D3.js", "Redis", "Tailwind"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-    githubUrl: "#",
-    liveUrl: "#",
+      "Built an end-to-end SaaS onboarding and subscription system, covering signup, plan selection, Stripe-based payments, and a billing dashboard for managing subscriptions, invoices, and payment methods. Also implemented account profile management and secure deletion flows.",
+    tags: ["Onboarding", "Stripe", "Subscriptions", "Full-Stack"],
+    imageUrl: "/iR-studio/iR-studio-payment.png",
+    screenshots: [
+      "/iR-studio/iR-studio-signup.png",
+      "/iR-studio/iR-studio-plan-selection.png",
+      "/iR-studio/iR-studio-payment.png",
+      "/iR-studio/iR-studio-billing-details.png",
+      "/iR-studio/iR-studio-account-details.png",
+    ],
+    keyFeatures: [
+      "Custom Stripe subscription and payment integration",
+      "End-to-end onboarding to dashboard flow",
+      "Subscription lifecycle and trial state handling",
+      "Production-ready account and billing management",
+    ],
+    highlights: [
+      "End-to-end onboarding flow including signup, account creation, and validation.",
+      "Subscription plan selection with pricing display and coupon support.",
+      "Custom Stripe payment integration without redirect-based checkout.",
+      "Billing dashboard for subscription management, invoices, and payment methods.",
+      "Trial period handling with dynamic status banner.",
+      "Account management including profile updates and secure account deletion.",
+    ],
+    githubUrl: "",
+    liveUrl: "",
     category: "fullstack",
   },
   {
     id: "2",
-    title: "Nova AI Workspace",
+    title: "Microsoft Data Formulator (GCP)",
     description:
-      "Collaborative AI environment for creative engineering workflows.",
+      "Self-deployed Microsoft Data Formulator on GCP with BigQuery loader and Gemini-powered insights.",
     longDescription:
-      "Built a specialized interface for Gemini integration, allowing writers to collaborate with AI on plot outlines and character development. Features real-time streaming responses and persistent workspace storage.",
-    tags: ["React", "Gemini API", "Node.js", "Vercel"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
-    githubUrl: "#",
-    liveUrl: "#",
-    category: "ai",
-  },
-  {
-    id: "3",
-    title: "Zenith Headless Store",
-    description:
-      "Sub-second page load e-commerce experience with headless CMS.",
-    longDescription:
-      "A headless commerce solution using Stripe for payments and Sanity.io for content management. Focused on sub-second page loads and mobile-first responsive design.",
-    tags: ["TypeScript", "Stripe", "Sanity", "Tailwind"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-    githubUrl: "#",
-    liveUrl: "#",
-    category: "frontend",
-  },
-  {
-    id: "4",
-    title: "Vault Security Protocol",
-    description: "Zero-trust authentication service with multi-region support.",
-    longDescription:
-      "A microservice-based authentication provider implementing OAuth2 and OIDC standards. Designed with security-first principles and comprehensive audit logging.",
-    tags: ["Node.js", "Redis", "Docker", "Kubernetes"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=800",
-    githubUrl: "#",
-    liveUrl: "#",
-    category: "backend",
+      "Deployed Microsoft Data Formulator on Google Cloud Run using Terraform to enable visual data exploration over BigQuery datasets. Contributed production code to add BigQuery as an external data loader and integrated Gemini Flash for AI-assisted insights and chart generation.",
+    tags: ["GCP", "Terraform", "BigQuery", "Gemini AI"],
+    imageUrl: "/data-formulator/data-formulator.png",
+    screenshots: [
+      "/data-formulator/data-formulator.png",
+      "/data-formulator/data-formulator-bigquery-loader.png",
+      "/data-formulator/data-formulator-model-configuration.png",
+      "/data-formulator/data-formulator-AI-insights.png",
+    ],
+    keyFeatures: [
+      "Cloud Run deployment with Terraform",
+      "BigQuery external data loader contribution",
+      "Gemini Flash AI insights pipeline",
+    ],
+    highlights: [
+      "Deployed Data Formulator on Cloud Run with Terraform for scalable access.",
+      "Added BigQuery as an external data loader in the official repo.",
+      "Integrated Gemini Flash to power AI-assisted analytics workflows.",
+    ],
+    githubUrl: "",
+    liveUrl: "",
+    category: "fullstack",
   },
 ];
-
 export const EXPERIENCES: Experience[] = [
   {
     company: "Napster Corp (formerly Infinite Reality)",

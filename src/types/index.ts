@@ -8,6 +8,10 @@ export interface Project {
   githubUrl: string;
   liveUrl: string;
   category: "frontend" | "backend" | "fullstack" | "ai";
+  videoUrl?: string;
+  screenshots?: string[];
+  highlights?: string[];
+  keyFeatures?: string[];
 }
 
 export interface Skill {

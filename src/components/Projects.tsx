@@ -3,9 +3,13 @@
 import React, { useState } from "react";
 
 import { PROJECTS } from "@/constants";
+import type { Project } from "@/types";
+import ProjectModal from "@/components/ProjectModal";
 
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState<string>("all");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredProjects =
     filter === "all"
@@ -55,7 +59,20 @@ const Projects: React.FC = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group glass overflow-hidden rounded-3xl border border-white/5 transition-all duration-700 hover:translate-y-[-10px] hover:shadow-2xl hover:shadow-sky-500/10"
+              role="button"
+              tabIndex={0}
+              onClick={() => {
+                setSelectedProject(project);
+                setIsModalOpen(true);
+              }}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  setSelectedProject(project);
+                  setIsModalOpen(true);
+                }
+              }}
+              className="group glass cursor-pointer overflow-hidden rounded-3xl border border-white/5 transition-all duration-700 hover:translate-y-[-10px] hover:shadow-2xl hover:shadow-sky-500/10"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img
@@ -64,18 +81,22 @@ const Projects: React.FC = () => {
                   className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 flex items-center justify-center gap-6 bg-slate-950/80 opacity-0 backdrop-blur-[2px] transition-all duration-500 group-hover:opacity-100">
-                  <a
-                    href={project.githubUrl}
-                    className="glass flex h-14 w-14 items-center justify-center rounded-2xl transition-all hover:scale-110 hover:bg-sky-600 active:scale-95"
-                  >
-                    <i className="fa-brands fa-github text-2xl"></i>
-                  </a>
-                  <a
-                    href={project.liveUrl}
-                    className="glass flex h-14 w-14 items-center justify-center rounded-2xl transition-all hover:scale-110 hover:bg-sky-600 active:scale-95"
-                  >
-                    <i className="fa-solid fa-rocket text-2xl"></i>
-                  </a>
+                  {project.githubUrl ? (
+                    <a
+                      href={project.githubUrl}
+                      className="glass flex h-14 w-14 items-center justify-center rounded-2xl transition-all hover:scale-110 hover:bg-sky-600 active:scale-95"
+                    >
+                      <i className="fa-brands fa-github text-2xl"></i>
+                    </a>
+                  ) : null}
+                  {project.liveUrl ? (
+                    <a
+                      href={project.liveUrl}
+                      className="glass flex h-14 w-14 items-center justify-center rounded-2xl transition-all hover:scale-110 hover:bg-sky-600 active:scale-95"
+                    >
+                      <i className="fa-solid fa-rocket text-2xl"></i>
+                    </a>
+                  ) : null}
                 </div>
                 <div className="absolute left-6 top-6 flex gap-2">
                   {project.tags.slice(0, 2).map((tag) => (
@@ -102,13 +123,19 @@ const Projects: React.FC = () => {
                   {project.description}
                 </p>
                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-sky-400 transition-all group-hover:gap-4">
-                  Read Case Study <i className="fa-solid fa-arrow-right"></i>
+                  View Details <i className="fa-solid fa-arrow-right"></i>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <ProjectModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 };
