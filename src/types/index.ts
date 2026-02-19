@@ -12,6 +12,7 @@ export interface Project {
   screenshots?: string[];
   highlights?: string[];
   keyFeatures?: string[];
+  extraLinks?: { label: string; href: string }[];
 }
 
 export interface Skill {

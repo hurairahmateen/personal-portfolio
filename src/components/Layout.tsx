@@ -95,8 +95,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <footer className="border-t border-slate-800 py-12 text-center">
         <div className="mx-auto max-w-6xl px-6">
           <p className="mb-4 text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} {PERSONAL_INFO.name}. Built with
-            React &amp; Gemini.
+            &copy; {new Date().getFullYear()} {PERSONAL_INFO.name}.
           </p>
           <div className="flex justify-center space-x-6">
             <a
@@ -110,12 +109,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               className="text-slate-400 transition-colors hover:text-white"
             >
               <i className="fa-brands fa-linkedin text-xl"></i>
-            </a>
-            <a
-              href={PERSONAL_INFO.social.twitter}
-              className="text-slate-400 transition-colors hover:text-white"
-            >
-              <i className="fa-brands fa-twitter text-xl"></i>
             </a>
           </div>
         </div>

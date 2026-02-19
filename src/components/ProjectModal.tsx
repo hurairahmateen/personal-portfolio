@@ -137,6 +137,52 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
                   </div>
 
                   <div className="space-y-8">
+                    {(project.liveUrl ||
+                      project.githubUrl ||
+                      project.extraLinks) && (
+                      <div className="glass rounded-3xl border border-white/5 p-8">
+                        <h3 className="mb-6 text-lg font-bold text-white">
+                          Project Links
+                        </h3>
+                        <div className="space-y-4">
+                          {project.liveUrl && (
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="group flex w-full items-center justify-between rounded-2xl bg-sky-600 px-6 py-4 font-bold text-white transition-all hover:bg-sky-500"
+                            >
+                              <span>Live Preview</span>
+                              <i className="fa-solid fa-rocket transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                          )}
+                          {project.githubUrl && (
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="glass group flex w-full items-center justify-between rounded-2xl px-6 py-4 font-bold text-white transition-all hover:bg-white/5"
+                            >
+                              <span>Source Code</span>
+                              <i className="fa-brands fa-github transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                          )}
+                          {project.extraLinks?.map((link) => (
+                            <a
+                              key={link.href}
+                              href={link.href}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="group flex w-full items-center justify-between rounded-2xl bg-slate-900/60 px-6 py-4 font-bold text-white shadow-sm shadow-slate-950/40 transition-all hover:bg-sky-500/20 hover:text-sky-200 hover:shadow-lg hover:shadow-sky-500/20"
+                            >
+                              <span>{link.label}</span>
+                              <i className="fa-solid fa-arrow-up-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     {project.keyFeatures && project.keyFeatures.length > 0 && (
                       <div className="glass rounded-3xl border border-white/5 p-8">
                         <h3 className="mb-4 text-lg font-bold text-white">
@@ -172,38 +218,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
                             </li>
                           ))}
                         </ul>
-                      </div>
-                    )}
-
-                    {(project.liveUrl || project.githubUrl) && (
-                      <div className="glass rounded-3xl border border-white/5 p-8">
-                        <h3 className="mb-6 text-lg font-bold text-white">
-                          Project Links
-                        </h3>
-                        <div className="space-y-4">
-                          {project.liveUrl && (
-                            <a
-                              href={project.liveUrl}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="group flex w-full items-center justify-between rounded-2xl bg-sky-600 px-6 py-4 font-bold text-white transition-all hover:bg-sky-500"
-                            >
-                              <span>Live Preview</span>
-                              <i className="fa-solid fa-rocket transition-transform group-hover:translate-x-1"></i>
-                            </a>
-                          )}
-                          {project.githubUrl && (
-                            <a
-                              href={project.githubUrl}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="glass group flex w-full items-center justify-between rounded-2xl px-6 py-4 font-bold text-white transition-all hover:bg-white/5"
-                            >
-                              <span>Source Code</span>
-                              <i className="fa-brands fa-github transition-transform group-hover:translate-x-1"></i>
-                            </a>
-                          )}
-                        </div>
                       </div>
                     )}
                   </div>

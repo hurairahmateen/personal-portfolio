@@ -10,36 +10,24 @@ export const PERSONAL_INFO = {
   social: {
     github: "https://github.com/hurairahmateen",
     linkedin: "https://linkedin.com/in/hurairahmateen",
-    twitter: "https://twitter.com",
   },
 };
 
 export const SKILLS: Skill[] = [
   { name: "JavaScript", level: 92, category: "Frontend" },
   { name: "TypeScript", level: 90, category: "Frontend" },
-  { name: "Python", level: 82, category: "Backend" },
-  { name: "Stripe", level: 82, category: "Payments" },
-  { name: "Google Cloud Platform", level: 84, category: "Cloud" },
-  { name: "C#", level: 70, category: "Backend" },
+  { name: "Python", level: 78, category: "Backend" },
   { name: "Node.js", level: 88, category: "Backend" },
   { name: "Next.js", level: 86, category: "Fullstack" },
+  { name: "LLM Integration", level: 80, category: "AI" },
+  { name: "Stripe", level: 82, category: "Payments" },
+  { name: "Google Cloud Platform", level: 84, category: "Cloud" },
   { name: "PostgreSQL", level: 85, category: "Databases" },
-  { name: "React.js", level: 90, category: "Frontend" },
-  { name: "Feathers.js", level: 78, category: "Backend" },
-  { name: "Tailwind CSS", level: 90, category: "Frontend" },
-  { name: "Material UI", level: 80, category: "Frontend" },
   { name: "Keycloak", level: 84, category: "Identity" },
   { name: "Knex", level: 75, category: "Backend" },
-  { name: "Hookstate", level: 72, category: "Frontend" },
-  { name: "MariaDB", level: 78, category: "Databases" },
-  { name: "MySQL", level: 80, category: "Databases" },
-  { name: "BigQuery", level: 82, category: "Databases" },
-  { name: "MongoDB", level: 80, category: "Databases" },
   { name: "Kubernetes", level: 78, category: "Cloud" },
   { name: "Helm", level: 75, category: "Cloud" },
   { name: "Cloud Run", level: 78, category: "Cloud" },
-  { name: "Terraform", level: 76, category: "Cloud" },
-  { name: "JIRA", level: 70, category: "Tools" },
 ];
 
 export const PROJECTS: Project[] = [
@@ -47,10 +35,10 @@ export const PROJECTS: Project[] = [
     id: "1",
     title: "iR Studio",
     description:
-      "Owned onboarding UX, Stripe subscriptions, and billing management for a 3D SaaS platform.",
+      "End-to-end SaaS onboarding, Stripe subscriptions, and billing management for a 3D platform.",
     longDescription:
-      "Built an end-to-end SaaS onboarding and subscription system, covering signup, plan selection, Stripe-based payments, and a billing dashboard for managing subscriptions, invoices, and payment methods. Also implemented account profile management and secure deletion flows.",
-    tags: ["Onboarding", "Stripe", "Subscriptions", "Full-Stack"],
+      "Owned the complete onboarding and subscription experience, including user signup, plan selection, custom Stripe payments, and a production-grade billing dashboard. Implemented subscription lifecycle management, trial handling, invoices, payment methods, and secure account profile management.",
+    tags: ["Onboarding", "Stripe", "Subscriptions", "SaaS"],
     imageUrl: "/iR-studio/iR-studio-payment.png",
     screenshots: [
       "/iR-studio/iR-studio-signup.png",
@@ -60,18 +48,17 @@ export const PROJECTS: Project[] = [
       "/iR-studio/iR-studio-account-details.png",
     ],
     keyFeatures: [
-      "Custom Stripe subscription and payment integration",
-      "End-to-end onboarding to dashboard flow",
-      "Subscription lifecycle and trial state handling",
+      "Custom Stripe subscription and payment flows",
+      "End-to-end onboarding to dashboard experience",
+      "Subscription lifecycle, trials, and invoice handling",
       "Production-ready account and billing management",
     ],
     highlights: [
-      "End-to-end onboarding flow including signup, account creation, and validation.",
-      "Subscription plan selection with pricing display and coupon support.",
-      "Custom Stripe payment integration without redirect-based checkout.",
-      "Billing dashboard for subscription management, invoices, and payment methods.",
-      "Trial period handling with dynamic status banner.",
-      "Account management including profile updates and secure account deletion.",
+      "Built a complete onboarding flow with signup, validation, and account creation",
+      "Implemented subscription plan selection with coupon support",
+      "Integrated custom Stripe payments without redirect-based checkout",
+      "Delivered a billing dashboard for subscriptions, invoices, and payment methods",
+      "Implemented trial state handling and secure account management",
     ],
     githubUrl: "",
     liveUrl: "",
@@ -81,10 +68,10 @@ export const PROJECTS: Project[] = [
     id: "2",
     title: "Microsoft Data Formulator (GCP)",
     description:
-      "Self-deployed Microsoft Data Formulator on GCP with BigQuery loader and Gemini-powered insights.",
+      "Self-hosted Microsoft Data Formulator on GCP with BigQuery integration and Gemini-powered insights.",
     longDescription:
-      "Deployed Microsoft Data Formulator on Google Cloud Run using Terraform to enable visual data exploration over BigQuery datasets. Contributed production code to add BigQuery as an external data loader and integrated Gemini Flash for AI-assisted insights and chart generation.",
-    tags: ["GCP", "Terraform", "BigQuery", "Gemini AI"],
+      "Self-deployed Microsoft Data Formulator on Google Cloud Run using Terraform to enable scalable visual exploration of BigQuery datasets. Extended the platform by adding BigQuery as an external data loader and contributed the feature to the official Microsoft open-source repository. Integrated Gemini Flash to support AI-assisted insights and chart generation.",
+    tags: ["GCP", "Terraform", "BigQuery", "Open Source", "Gemini AI"],
     imageUrl: "/data-formulator/data-formulator.png",
     screenshots: [
       "/data-formulator/data-formulator.png",
@@ -94,13 +81,23 @@ export const PROJECTS: Project[] = [
     ],
     keyFeatures: [
       "Cloud Run deployment with Terraform",
-      "BigQuery external data loader contribution",
-      "Gemini Flash AI insights pipeline",
+      "BigQuery external data loader (open-source contribution)",
+      "Gemini Flash AI-powered analytics and insights",
     ],
     highlights: [
-      "Deployed Data Formulator on Cloud Run with Terraform for scalable access.",
-      "Added BigQuery as an external data loader in the official repo.",
-      "Integrated Gemini Flash to power AI-assisted analytics workflows.",
+      "Deployed Data Formulator on GCP using infrastructure as code",
+      "Added BigQuery support and contributed the feature upstream to Microsoft’s repo",
+      "Integrated Gemini Flash to enable AI-driven insights and visualizations",
+    ],
+    extraLinks: [
+      {
+        label: "Official Repository",
+        href: "https://github.com/microsoft/data-formulator",
+      },
+      {
+        label: "BigQuery PR #206",
+        href: "https://github.com/microsoft/data-formulator/pull/206",
+      },
     ],
     githubUrl: "",
     liveUrl: "",
