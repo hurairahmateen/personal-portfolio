@@ -6,7 +6,7 @@ import { PERSONAL_INFO } from "@/constants";
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="px-6 pb-20 pt-32 md:pb-32 md:pt-48">
+    <section id="about" className="px-6 pb-20 pt-32 md:pb-32 md:pt-48">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-16 lg:flex-row">
         <div className="flex-1 text-center lg:text-left">
           <div className="mb-6 inline-block rounded-full border border-sky-500/20 bg-sky-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-sky-400">

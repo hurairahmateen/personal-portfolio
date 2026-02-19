@@ -21,9 +21,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Projects", href: "#projects" },
+    { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -35,9 +35,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         }`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6">
-          <a href="#home" className="text-2xl font-bold tracking-tighter">
+          <a href="#about" className="text-2xl font-bold tracking-tighter">
             <span className="gradient-text">
-              {PERSONAL_INFO.name.split(" ")[0].toLowerCase()}.dev
+              {PERSONAL_INFO.name.split(" ")[1].toLowerCase()}.dev
             </span>
           </a>
 
