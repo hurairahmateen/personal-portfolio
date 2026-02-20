@@ -12,7 +12,7 @@ import {
 import { SKILLS } from "@/constants";
 
 const SkillsChart: React.FC = () => {
-  const data = SKILLS.slice(0, 10);
+  const data = SKILLS;
 
   return (
     <section className="bg-slate-900/50 px-6 py-20">
