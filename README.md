@@ -10,7 +10,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Update the portfolio content in `src/data/content.ts`.
+Update the portfolio content in `src/constants/index.ts`.
 
 ## Contact form (Resend)
 
