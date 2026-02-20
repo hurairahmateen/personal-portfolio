@@ -32,5 +32,5 @@ export async function POST(request: Request) {
     text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
   });
 
-  return NextResponse.redirect(new URL("/#contact", request.url));
+  return NextResponse.json({ ok: true });
 }

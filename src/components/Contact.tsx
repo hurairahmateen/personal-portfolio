@@ -10,16 +10,53 @@ const Contact: React.FC = () => {
     email: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "sending" | "success">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setStatus("sending");
-    setTimeout(() => {
+    setErrorMessage(null);
+
+    const formData = new FormData();
+    formData.append("name", formState.name);
+    formData.append("email", formState.email);
+    formData.append("message", formState.message);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+        redirect: "manual",
+      });
+
+      if (response.type === "opaqueredirect") {
+        setStatus("success");
+        setFormState({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+        return;
+      }
+
+      const data = await response.json().catch(() => null);
+
+      if (!response.ok) {
+        throw new Error(data?.error ?? "Failed to send message.");
+      }
+
       setStatus("success");
       setFormState({ name: "", email: "", message: "" });
       setTimeout(() => setStatus("idle"), 5000);
-    }, 1500);
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error ? error.message : "Failed to send message.",
+      );
+    }
   };
 
   return (
@@ -118,7 +155,7 @@ const Contact: React.FC = () => {
 
             <button
               disabled={status !== "idle"}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-sky-600 py-4 font-bold text-white shadow-lg shadow-sky-900/20 transition-all hover:bg-sky-500"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-sky-600 py-4 font-bold text-white shadow-lg shadow-sky-900/20 transition-all hover:bg-sky-500 disabled:cursor-not-allowed disabled:opacity-70"
             >
               {status === "idle" && (
                 <>
@@ -137,7 +174,15 @@ const Contact: React.FC = () => {
                   Message Sent! <i className="fa-solid fa-check"></i>
                 </>
               )}
+              {status === "error" && (
+                <>
+                  Try Again <i className="fa-solid fa-triangle-exclamation"></i>
+                </>
+              )}
             </button>
+            {errorMessage && (
+              <p className="text-sm text-red-400">{errorMessage}</p>
+            )}
           </form>
         </div>
       </div>
