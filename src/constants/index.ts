@@ -110,7 +110,7 @@ export const PROJECTS: Project[] = [
       "Turn vague goals into focused, time-boxed execution plans using a local LLM with no paid APIs.",
     longDescription:
       "Built a full MVP that converts a single sentence into a structured execution plan: summary, immediate next action, ordered steps, and time blocks. The system runs fully offline via a local llama.cpp server, with a Next.js UI and API route orchestrating the plan generation pipeline.",
-    tags: ["Next.js", "TypeScript", "Local LLM", "llama.cpp"],
+    tags: ["Local LLM", "Next.js", "TypeScript", "llama.cpp"],
     imageUrl: "/tasklens-ai/tasklens-home.png",
     screenshots: [
       "/tasklens-ai/tasklens-home.png",
@@ -129,6 +129,38 @@ export const PROJECTS: Project[] = [
       "Defined and enforced the structured JSON response contract",
     ],
     githubUrl: "https://github.com/hurairahmateen/tasklens-ai",
+    liveUrl: "",
+    category: "ai",
+  },
+  {
+    id: "4",
+    title: "ConceptForge AI",
+    description:
+      "AI powered architectural ideation engine that transforms project constraints into visionary design narratives.",
+    longDescription:
+      "Built an end to end architectural concept generation platform that converts structured project inputs into rich design narratives, philosophies, material palettes, and zoning strategies. The system features a dual AI engine supporting both Google Gemini and OpenAI models, strict schema enforced outputs for consistency, secure BYOK key handling via Next.js Server Actions, and instant PDF export for professional concept delivery.",
+    tags: ["Gemini API", "OpenAI API", "Next.js", "TypeScript", "Tailwind CSS"],
+    imageUrl: "/conceptforge-ai/conceptforge-ai-home.png",
+    screenshots: [
+      "/conceptforge-ai/conceptforge-ai-home.png",
+      "/conceptforge-ai/conceptforge-ai-form.png",
+      "/conceptforge-ai/conceptforge-ai-result.png",
+    ],
+    keyFeatures: [
+      "Dual AI engine with seamless toggle between Gemini and OpenAI",
+      "Structured architectural synthesis with strict LLM schemas",
+      "Bring Your Own Key flow handled securely via Server Actions",
+      "One click PDF export of generated architectural concepts",
+      "Graceful error handling for quota and API failures",
+      "Premium animated UI built with Tailwind CSS and Framer Motion",
+    ],
+    highlights: [
+      "Designed and built the full stack Next.js application end to end",
+      "Implemented schema constrained AI outputs for reliable structure",
+      "Engineered secure client provided API key workflow",
+      "Created production ready PDF export pipeline using jsPDF",
+    ],
+    githubUrl: "https://github.com/hurairahmateen/conceptforge-ai",
     liveUrl: "",
     category: "ai",
   },
