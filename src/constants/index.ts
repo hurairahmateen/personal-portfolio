@@ -138,32 +138,35 @@ export const PROJECTS: Project[] = [
     description:
       "AI powered architectural ideation engine that transforms project constraints into visionary design narratives.",
     longDescription:
-      "Built an end to end architectural concept generation platform that converts structured project inputs into rich design narratives, philosophies, material palettes, and zoning strategies. The system features a dual AI engine supporting both Google Gemini and OpenAI models, strict schema enforced outputs for consistency, secure BYOK key handling via Next.js Server Actions, and instant PDF export for professional concept delivery.",
-    tags: ["Gemini API", "OpenAI API", "Next.js", "TypeScript", "Tailwind CSS"],
+      "Built an end-to-end architectural concept generation platform that converts structured project inputs into rich design narratives, philosophies, material palettes, and zoning strategies. The system features a dual AI engine (Google Gemini and OpenAI), strict schema-enforced outputs, and a complete authentication flow using Supabase. Users can generate, securely save, and view their architectural concepts on a personal dashboard, with Bring Your Own Key (BYOK) capabilities safely managed in local memory.",
+    tags: ["Gemini AI", "Next.js 15", "Supabase", "TypeScript", "Tailwind CSS", "OpenAI"],
     imageUrl: "/conceptforge-ai/conceptforge-ai-home.png",
     screenshots: [
       "/conceptforge-ai/conceptforge-ai-home.png",
+      "/conceptforge-ai/conceptforge-ai-onboarding.png",
       "/conceptforge-ai/conceptforge-ai-form.png",
+      "/conceptforge-ai/conceptforge-ai-dashboard.png",
       "/conceptforge-ai/conceptforge-ai-result.png",
     ],
     keyFeatures: [
+      "Secure user authentication and PostgreSQL database storage via Supabase",
+      "Personalized Dashboard to view and manage generated concept history",
       "Dual AI engine with seamless toggle between Gemini and OpenAI",
+      "Bring Your Own Key (BYOK) flow handled securely via browser LocalStorage",
       "Structured architectural synthesis with strict LLM schemas",
-      "Bring Your Own Key flow handled securely via Server Actions",
-      "One click PDF export of generated architectural concepts",
-      "Graceful error handling for quota and API failures",
-      "Premium animated UI built with Tailwind CSS and Framer Motion",
+      "One-click PDF export of generated architectural concepts using jsPDF",
     ],
     highlights: [
-      "Designed and built the full stack Next.js application end to end",
-      "Implemented schema constrained AI outputs for reliable structure",
-      "Engineered secure client provided API key workflow",
-      "Created production ready PDF export pipeline using jsPDF",
+      "Engineered a full-stack Next.js 15 application with a robust Supabase backend",
+      "Implemented Row Level Security (RLS) to ensure private database access",
+      "Designed a secure, local-memory-only approach to client API key management",
+      "Developed an animated, highly aesthetic UI using Tailwind CSS and Framer Motion",
     ],
     githubUrl: "https://github.com/hurairahmateen/conceptforge-ai",
-    liveUrl: "",
+    liveUrl: "https://conceptforge-ai.vercel.app", // Update this when you finish deploying!
     category: "ai",
   },
+
 ];
 export const EXPERIENCES: Experience[] = [
   {
