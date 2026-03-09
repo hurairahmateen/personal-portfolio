@@ -38,6 +38,7 @@ export const PROJECTS: Project[] = [
     longDescription:
       "Owned the complete onboarding and subscription experience, including user signup, plan selection, custom Stripe payments, and a production-grade billing dashboard. Implemented subscription lifecycle management, trial handling, invoices, payment methods, and secure account profile management.",
     tags: ["Onboarding", "Stripe", "Subscriptions", "SaaS"],
+    videoUrl: "https://www.youtube.com/embed/_n497YupmLw",
     imageUrl: "/iR-studio/iR-studio-payment.png",
     screenshots: [
       "/iR-studio/iR-studio-signup.png",
@@ -59,6 +60,12 @@ export const PROJECTS: Project[] = [
       "Delivered a billing dashboard for subscriptions, invoices, and payment methods",
       "Implemented trial state handling and secure account management",
     ],
+    extraLinks: [
+      {
+        label: "Admin Panel Demo",
+        href: "https://www.youtube.com/watch?v=ZBJWLydvUm4",
+      },
+    ],
     githubUrl: "",
     liveUrl: "",
     category: "fullstack",
@@ -71,6 +78,7 @@ export const PROJECTS: Project[] = [
     longDescription:
       "Self-deployed Microsoft Data Formulator on Google Cloud Run using Terraform to enable scalable visual exploration of BigQuery datasets. Extended the platform by adding BigQuery as an external data loader and contributed the feature to the official Microsoft open-source repository. Integrated Gemini Flash to support AI-assisted insights and chart generation.",
     tags: ["GCP", "Terraform", "BigQuery", "Open Source", "Gemini AI"],
+    videoUrl: "https://www.youtube.com/embed/_wIhfa_YbSk",
     imageUrl: "/data-formulator/data-formulator.png",
     screenshots: [
       "/data-formulator/data-formulator.png",
