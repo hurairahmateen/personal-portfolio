@@ -1,5 +1,4 @@
-import type { Experience, Project, Skill } from "@/types";
-
+import type { Experience, Project, Skill, Testimonial } from "@/types";
 export const PERSONAL_INFO = {
   name: "Muhammad Hurairah Mateen",
   title: "Software Engineer | Full-Stack Developer",
@@ -105,35 +104,6 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "3",
-    title: "TaskLens AI MVP",
-    description:
-      "Turn vague goals into focused, time-boxed execution plans using a local LLM with no paid APIs.",
-    longDescription:
-      "Built a full MVP that converts a single sentence into a structured execution plan: summary, immediate next action, ordered steps, and time blocks. The system runs fully offline via a local llama.cpp server, with a Next.js UI and API route orchestrating the plan generation pipeline.",
-    tags: ["Local LLM", "Next.js", "TypeScript", "llama.cpp"],
-    imageUrl: "/tasklens-ai/tasklens-home.png",
-    screenshots: [
-      "/tasklens-ai/tasklens-home.png",
-      "/tasklens-ai/tasklens-prompt.png",
-      "/tasklens-ai/tasklens-AI-response.png",
-    ],
-    keyFeatures: [
-      "Natural-language goal input with Quick Focus and Deep Work modes",
-      "AI-generated summary, next action, steps, and time blocks",
-      "Fully offline local LLM inference with llama.cpp",
-      "Structured JSON contract for consistent plan output",
-    ],
-    highlights: [
-      "Designed the UI, API route, and plan rendering pipeline end to end",
-      "Integrated local llama.cpp server for zero-cloud inference",
-      "Defined and enforced the structured JSON response contract",
-    ],
-    githubUrl: "https://github.com/hurairahmateen/tasklens-ai",
-    liveUrl: "",
-    category: "ai",
-  },
-  {
-    id: "4",
     title: "ConceptForge AI",
     description:
       "AI powered architectural ideation engine that transforms project constraints into visionary design narratives.",
@@ -166,6 +136,35 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://conceptforge-ai.vercel.app", // Update this when you finish deploying!
     category: "ai",
   },
+  {
+    id: "4",
+    title: "TaskLens AI MVP",
+    description:
+      "Turn vague goals into focused, time-boxed execution plans using a local LLM with no paid APIs.",
+    longDescription:
+      "Built a full MVP that converts a single sentence into a structured execution plan: summary, immediate next action, ordered steps, and time blocks. The system runs fully offline via a local llama.cpp server, with a Next.js UI and API route orchestrating the plan generation pipeline.",
+    tags: ["Local LLM", "Next.js", "TypeScript", "llama.cpp"],
+    imageUrl: "/tasklens-ai/tasklens-home.png",
+    screenshots: [
+      "/tasklens-ai/tasklens-home.png",
+      "/tasklens-ai/tasklens-prompt.png",
+      "/tasklens-ai/tasklens-AI-response.png",
+    ],
+    keyFeatures: [
+      "Natural-language goal input with Quick Focus and Deep Work modes",
+      "AI-generated summary, next action, steps, and time blocks",
+      "Fully offline local LLM inference with llama.cpp",
+      "Structured JSON contract for consistent plan output",
+    ],
+    highlights: [
+      "Designed the UI, API route, and plan rendering pipeline end to end",
+      "Integrated local llama.cpp server for zero-cloud inference",
+      "Defined and enforced the structured JSON response contract",
+    ],
+    githubUrl: "https://github.com/hurairahmateen/tasklens-ai",
+    liveUrl: "",
+    category: "ai",
+  },
 
 ];
 export const EXPERIENCES: Experience[] = [
@@ -189,4 +188,32 @@ export const EXPERIENCES: Experience[] = [
       "Refactored services to Feathers.js and initiated Stripe billing integration.",
     ],
   },
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    name: "Paul Kolesa",
+    role: "Engineering Manager",
+    image: "/testimonials/testimonial-paul-kolesa.png"
+  },
+  {
+    name: "Griffin Rowell",
+    role: "Chief Technology Officer",
+    image: "/testimonials/testimonial-griffin-rowell.png"
+  },
+  {
+    name: "Marcin Gierlak",
+    role: "Vice President of AI & Engineering",
+    image: "/testimonials/testimonial-marcin-gierlak.png"
+  },
+  {
+    name: "Chris Ball",
+    role: "Product Manager",
+    image: "/testimonials/testimonial-chris-ball.png"
+  },
+  {
+    name: "Josh Field",
+    role: "Co-Founder & Engineering Manager",
+    image: "/testimonials/testimonial-josh-field.png"
+  }
 ];

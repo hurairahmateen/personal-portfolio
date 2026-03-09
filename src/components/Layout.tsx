@@ -24,15 +24,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
+    { name: "Testimonials", href: "#testimonials" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
     <div className="min-h-screen bg-[#0b1120] text-slate-100">
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-          isScrolled ? "glass py-3" : "bg-transparent py-6"
-        }`}
+        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${isScrolled ? "glass py-3" : "bg-transparent py-6"
+          }`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6">
           <a href="#about" className="text-2xl font-bold tracking-tighter">
@@ -65,9 +65,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             aria-label="Toggle menu"
           >
             <i
-              className={`fa-solid ${
-                isMenuOpen ? "fa-xmark" : "fa-bars"
-              } text-2xl`}
+              className={`fa-solid ${isMenuOpen ? "fa-xmark" : "fa-bars"
+                } text-2xl`}
             ></i>
           </button>
         </div>

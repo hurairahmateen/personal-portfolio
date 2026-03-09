@@ -32,3 +32,9 @@ export interface Message {
   role: "user" | "assistant";
   content: string;
 }
+
+export interface Testimonial {
+  name: string;
+  role: string;
+  image: string;
+}
