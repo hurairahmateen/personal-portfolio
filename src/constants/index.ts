@@ -141,7 +141,7 @@ export const PROJECTS: Project[] = [
       "Developed an animated, highly aesthetic UI using Tailwind CSS and Framer Motion",
     ],
     githubUrl: "https://github.com/hurairahmateen/conceptforge-ai",
-    liveUrl: "https://conceptforge-ai.vercel.app", // Update this when you finish deploying!
+    liveUrl: "",
     category: "ai",
   },
   {
